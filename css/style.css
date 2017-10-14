@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+
+html {
+    height: 100%;
+}
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+table {
+    text-align: center;
+}
+
+
+body {
+    margin: 0;
+}
+
+/*   .backgroundimage {
+  width: 100%;
+  min-height: 100%;
+  display: block;
+  position: relative;
+        margin:0;
+        padding:0;
+}
+
+.backgroundimage::after {
+  content: "";
+  background: url(https://gc.org.au/wp-content/uploads/2017/07/Connect.jpg);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+  background-size:cover;
+  background-position: center center;
+}*/
+
+@media (max-width: 800px) {
+    .container {
+        padding: 0;
+
+    }
+    .btn-sqr {
+        max-height: 100px;
+        font-size: 13px !important;
+    }
+    h1 {
+        font-size: 28px;
+    }
+}
+
+a {
+    color: #333;
+    text-decoration: underline;
+}
+
+a:hover {
+    cursor: auto;
+}
+
+h1 {
+    font-weight: 700;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+p.text {
+    text-align: center;
+    font-weight: 100;
+    padding: 25px;
+}
+
+.btn-sqr,
+.btn-sqr:hover {
+    height: 125px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    white-space: pre-wrap;
+    margin-left: 5px;
+    margin-right: 5px;
+    max-width: 95%;
+    background-color: rgb(22, 166, 151);
+}
+
+.row {
+    text-align: center;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: inherit
+}
+
+.container {
+    max-width: 800px;
+}
+
+/*  .blueback, .blueback:hover {background-image: linear-gradient(45deg, #0093E9 0%, #80D0C7 100%);}
+        
+    .orangeback, .orangeback:hover {background-image: linear-gradient(-45deg, #FAD961 0%, #F76B1C 99%);}
+        
+        .greyback, .greyback:hover {  background: linear-gradient(to right, #aaaaaa, #bbb);color:black !important;}
+        
+        .greenback, .greenback:hover {  background: linear-gradient(45deg, #1d976c, #93f9b9);}
+        
+        .darkgreenback, .darkgreenback:hover {background: linear-gradient(-135deg, #2980b9, #2c3e50);}
+        
+         .redback, .redback:hover {background: linear-gradient(-135deg, #e52d27, #b31217);}
+        
+        .darkredback, .darkredback:hover {background: linear-gradient(-135deg, #a73737, #7a2828);}
+        
+        .yellowback, .yellowback:hover {background: linear-gradient(45deg, #ffb75e, #ed8f03);} */
+
+button {
+    border: none !important;
+}
+
+.row {
+    margin-bottom: 8px;
+}
+
+
+.btn:focus {box-shadow:none;}
+
+
+button:after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 125px;
+    transition: all 0.5s;
+    margin: auto;
+    border-radius: .25rem;
+}
+
+button:hover:after {
+    opacity: 0.2;
+    top: 0px;
+}
+
+
+xmp {
+    white-space: pre-wrap !important;
+    font-size: 10px !important;
+    text-align: left !important;
+    border-radius: 10px !important;
+    padding: 20px;
+    background-color: #eee;
+}

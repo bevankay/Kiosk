@@ -1,0 +1,125 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jscolor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+
+            $("input").change(function() {
+                    var title = $("#name").val();
+                    $("#updatebutton").html(title);
+                    var link = $("#url").val();
+                    $("#linky").attr('href', link);
+                    var backcolor = $("#backcolor").val();
+                    $("#updatebutton").css('background-color', backcolor);
+                    var gradient1 = $("#gradient1").val();
+                    var gradient2 = $("#gradient2").val();
+                    var deg = $("#deg").val();
+                    if ($("#gradient1").val().length != 0) {
+                        $('#updatebutton').css({
+                            'background-image': 'linear-gradient(45deg,' + gradient1 + ', ' + gradient2 + ')'
+                        })
+                    };
+                if ($("#gradient1").val().length === 0) {
+                         $("#updatebutton").css("background-image","none"); } 
+
+                
+            var textcolor = $("#textcolor").val();
+            $("#updatebutton").css('color', textcolor);
+            } );
+
+        $("#generate").click(function() {
+            var htmlString = $("#fullcode").html();
+            $("#output").text(htmlString);
+        });
+
+        $("#copy").click(function() {
+        var htmlString = $("#fullcode").html();
+        var clipboard = new Clipboard('.copy-button', {
+            text: function() {
+                return htmlString;
+            }
+        });
+
+            
+        });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <h2>Button Generator for Kiosk</h2>
+
+                <form>
+
+                    <b>Button Title:</b> <input id="name" type="text" name="title" required><br><br>
+
+                    <b>Link:</b> <input type="text" id="url" name="url" value="" required><br>
+                    <small>* Must include http:// at the start</small><br><br>
+
+                    <small>You can choose to use a fixed background color <strong>OR</strong> gradient.<br>
+    If left blank will default to Teal.</small><br>
+                    <small>Input HEX values, including the preceeding #</small><br>
+                    <b>Background Colour:</b> <input id="backcolor" class="jscolor {required:false,hash:true}" type="text" name="backcolor"><br>
+                    <br>
+                    <b>Gradient Colour 1:</b> <input id="gradient1" class="jscolor {required:false,hash:true}" type="text" name="colour1"><br>
+
+                    <b>Gradient Colour 2:</b> <input id="gradient2" class="jscolor {required:false,hash:true}" name="colour2">
+
+                    <br><br>
+
+                    <small>
+                        <b>Inspiration:<br>
+                            <a href="http://uigradients.com/" target="_blank">www.uigradients.com</a><br>
+                            <a href="https://www.grabient.com/" target="_blank">www.grabient.com</a>
+                        </b>
+                    </small>
+                    <br><br>
+
+                    <b>Text Colour:</b> <input id="textcolor" class="jscolor {required:false,hash:true}" type="text" name="colour3"><br>
+                    <small>If left blank text will be white.</small><br><br>
+
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <input type="button" role="button" value="Update Button" class="updater btn btn-primary btn-sm">
+
+                <hr/>
+                <h3>Button Preview:</h3>
+            </div>
+        </div>
+
+        <div id="fullcode" class="row">
+            <div class="col-4">
+                <a href="" id="linky" target="_blank"><button id="updatebutton" type="button" class="btn btn-primary btn-sqr">Test</button></a>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col">
+                <input role="button" type="button" value="Generate HTML" class="btn btn-primary btn-sm" id="generate">
+                <input role="button" type="button" value="Copy HTML" id="copy" class="btn btn-primary btn-sm copy-button">
+                <br>
+
+                <xmp id="output"></xmp>
+
+            </div>
+        </div>
+    </div>
+</body>
